@@ -1,0 +1,53 @@
+.recipe-div {
+    background-color: #fff1ea;
+}
+
+.recipe-title {
+    color: #d65ae2;
+}
+
+/* Timeline Css */
+.custom-timeline {
+    margin-left: 20px;
+}
+
+.custom-timeline .rs-timeline-item-custom-dot .rs-icon {
+    position: absolute;
+    background: #f8cdf3;
+    top: 0;
+    left: -2px;
+    border: 2px solid #d7a0f8;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 18px;
+    color: #999;
+    margin-left: -13px;
+    justify-content: center;
+    padding: 8px;
+}
+.custom-timeline .rs-timeline-item-custom-dot span {
+    position: absolute;
+    background: #f8cdf3;
+    top: 0;
+    left: -2px;
+    border: 2px solid #d7a0f8;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 25px;
+    color: #999;
+    margin-left: -13px;
+    justify-content: center;
+    /* padding: 8px; */
+}
+
+.custom-timeline .rs-timeline-item-content {
+    margin-left: 24px;
+}
+
+.custom-timeline .rs-timeline-item-content p {
+    margin: 0;
+}
+
+/* Timeline Css */
