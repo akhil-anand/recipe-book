@@ -2,7 +2,7 @@
   "name": "recipe-book",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://akhil-anand.github.io/recipe-book/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.5",

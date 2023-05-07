@@ -3,7 +3,7 @@ import { Button, Drawer, Placeholder } from 'rsuite'
 
 const DrawerComponent = ({openDrawer, setOpenDrawer}) => {
     return (
-        <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
+        <Drawer size='xs' open={openDrawer} onClose={() => setOpenDrawer(false)}>
             <Drawer.Header>
                 <Drawer.Title>Drawer Title</Drawer.Title>
                 <Drawer.Actions>
