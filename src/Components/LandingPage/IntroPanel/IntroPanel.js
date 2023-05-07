@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, ButtonGroup, Col, Grid, Panel, Placeholder, Row, Sidebar, Stack } from 'rsuite'
-import food_intro from '../../assets/food_intro.jpg'
+import food_intro from '../../../assets/food_intro.jpg'
 
 import './IntroPanel.css'
 
