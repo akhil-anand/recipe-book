@@ -27,7 +27,7 @@ const RecipePage = () => {
     };
 
     return (
-        <Container className="h-screen flex items-center justify-center">
+        <Container className="h-screen flex items-center justify-center my-5">
             <div>
                 <img style={{ maxHeight: '300px' }} src={food_intro} className='rounded-md' />
                 <p className='recipe-title font-sans font-semi-bold text-2xl'>{recipeData?.recipeName}</p>

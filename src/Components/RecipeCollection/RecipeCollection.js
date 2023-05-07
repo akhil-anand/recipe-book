@@ -4,7 +4,7 @@ import ExistingRecipes from './ExistingRecipes/ExistingRecipes'
 const RecipeCollection = () => {
   
   return (
-    <div>RecipeCollection
+    <div>
       <ExistingRecipes />
     </div>
   )

@@ -29,6 +29,16 @@ export const CollectionSlice = createSlice({
                 {mainStep: 'Add Cold Water', instructions: ['see that the water is luke warm', 'see that the water is mineral water']},
                 {mainStep: 'Add normal Water', instructions: ['see that the water is luke warm', 'see that the water is mineral water']},
         ]},        
+            { recipeName: 'Hot Water 1', rating: 3, steps:[ 
+                {mainStep: 'Add Hot Water', instructions: ['see that the water is luke warm', 'see that the water is mineral water']},
+                {mainStep: 'Add Cold Water', instructions: ['see that the water is luke warm', 'see that the water is mineral water']},
+                {mainStep: 'Add normal Water', instructions: ['see that the water is luke warm', 'see that the water is mineral water']},
+        ]},        
+            { recipeName: 'Hot Water 2', rating: 3, steps:[ 
+                {mainStep: 'Add Hot Water', instructions: ['see that the water is luke warm', 'see that the water is mineral water']},
+                {mainStep: 'Add Cold Water', instructions: ['see that the water is luke warm', 'see that the water is mineral water']},
+                {mainStep: 'Add normal Water', instructions: ['see that the water is luke warm', 'see that the water is mineral water']},
+        ]},        
           
         ]
     },

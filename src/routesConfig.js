@@ -8,7 +8,7 @@ const RoutesConfig = () => {
   return (
     <Routes>
         <Route path="/recipe-book" element={<LandingPage />} />
-        <Route path="/Collection" element={<RecipeCollection />} />
+        <Route path="/Collections" element={<RecipeCollection />} />
         <Route path="/Recipe-page" element={<RecipePage />} />
         <Route path="*" element={<Navigate to="/recipe-book" />} />
     </Routes>
