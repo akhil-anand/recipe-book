@@ -26,7 +26,7 @@ const RecipeCard = ({ data }) => {
     };
 
     return (
-        <Panel className='border border-8 max-w-sm m-2' onClick={() => navigate('/recipe-page', {state:{data}})} role='button'>
+        <Panel className='border border-8 max-w-sm m-2' onClick={() => navigate('/Recipe-page', {state:{data}})} role='button'>
             <img style={{ maxHeight: '300px' }} src={food_intro} className='rounded-md' />
             <p className='recipe-title font-sans font-semi-bold text-2xl'>{data?.recipeName}</p>
             <>
