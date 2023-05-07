@@ -10,7 +10,7 @@ const HeaderComponent = ({setOpenDrawer}) => {
 
     return (
         <Nav className=''>
-            <Nav.Item onClick={() => navigate('/recipe-book')}icon={<HomeIcon />}>Home</Nav.Item>
+            <Nav.Item onClick={() => navigate('/')}icon={<HomeIcon />}>Home</Nav.Item>
             <Nav.Item onClick={() => navigate('/Collections')}>Collections</Nav.Item>
             <Nav.Item icon={<SettingHorizontalIcon size="5em"/>} onClick={() => setOpenDrawer(true)}>Open Drawer</Nav.Item>
         </Nav>
