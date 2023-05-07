@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/recipe-book/static/css/main.b69ca534.css",
-    "main.js": "/recipe-book/static/js/main.580eecc8.js",
+    "main.css": "/recipe-book/static/css/main.0be8a4cf.css",
+    "main.js": "/recipe-book/static/js/main.e08ae382.js",
     "static/js/787.9f2d37de.chunk.js": "/recipe-book/static/js/787.9f2d37de.chunk.js",
     "static/media/food_intro.jpg": "/recipe-book/static/media/food_intro.112124884d217d128368.jpg",
     "static/media/logo.svg": "/recipe-book/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/recipe-book/index.html",
-    "main.b69ca534.css.map": "/recipe-book/static/css/main.b69ca534.css.map",
-    "main.580eecc8.js.map": "/recipe-book/static/js/main.580eecc8.js.map",
+    "main.0be8a4cf.css.map": "/recipe-book/static/css/main.0be8a4cf.css.map",
+    "main.e08ae382.js.map": "/recipe-book/static/js/main.e08ae382.js.map",
     "787.9f2d37de.chunk.js.map": "/recipe-book/static/js/787.9f2d37de.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b69ca534.css",
-    "static/js/main.580eecc8.js"
+    "static/css/main.0be8a4cf.css",
+    "static/js/main.e08ae382.js"
   ]
 }
