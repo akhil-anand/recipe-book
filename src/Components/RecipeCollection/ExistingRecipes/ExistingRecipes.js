@@ -24,11 +24,11 @@ const ExistingRecipes = () => {
         <div className=''>
             <Grid>
                 <Row>
-                    <Col xs={6}></Col>
+                    <Col xs={4}></Col>
                     <Col xs={10}><h5 className='recipe-title font-semi-bold text-2xl'>Existing Recipes</h5></Col>
-                    <Col xs={4}>
+                    <Col xs={6}>
                         <InputGroup inside>
-                        <Input className='max-w-xs' onChange={(value) => handleFilter(value)} />
+                        <Input className='' onChange={(value) => handleFilter(value)} />
                             <InputGroup.Addon>
                                 <SearchIcon />
                             </InputGroup.Addon>
