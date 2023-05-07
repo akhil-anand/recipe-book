@@ -7,10 +7,10 @@ import RecipePage from './Components/RecipeCollection/RecipePage/RecipePage'
 const RoutesConfig = () => {
   return (
     <Routes>
-        <Route path="/recipe-book" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/Collections" element={<RecipeCollection />} />
         <Route path="/Recipe-page" element={<RecipePage />} />
-        <Route path="*" element={<Navigate to="/recipe-book" />} />
+        <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   )
 }
