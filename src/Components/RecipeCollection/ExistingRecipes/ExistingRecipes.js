@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import RecipeCard from './RecipeCard/RecipeCard'
-import { Col, Grid, Input, InputGroup, Row } from 'rsuite'
+import { Affix, Button, Col, Grid, Input, InputGroup, Row } from 'rsuite'
 import SearchIcon from '@rsuite/icons/Search';
+import AddRecipe from './AddRecipe/AddRecipe'
 
 const ExistingRecipes = () => {
 
@@ -11,6 +12,8 @@ const ExistingRecipes = () => {
     const [filteredCollection, setFilteredCollections] = useState([...collections])
 
     const navigate = useNavigate()
+
+    const [showModal, setShowModal] = useState(false)
 
     const handleFilter = (value) => {
         if (value?.length) {
@@ -22,13 +25,17 @@ const ExistingRecipes = () => {
 
     return (
         <div className=''>
+            <AddRecipe showModal={showModal} setShowModal={setShowModal} />
+            <Affix className='text-end'>
+                <Button className='mx-2' onClick={() => setShowModal(true)} >Add Recipe +</Button>
+            </Affix>
             <Grid>
                 <Row>
                     <Col xs={4}></Col>
-                    <Col xs={10}><h5 className='recipe-title font-semi-bold text-2xl'>Existing Recipes</h5></Col>
-                    <Col xs={6}>
+                    <Col xs={16}><h5 className='recipe-title font-semi-bold text-2xl'>Existing Recipes</h5></Col>
+                    <Col xs={4} className='flex justify-between'>
                         <InputGroup inside>
-                        <Input className='' onChange={(value) => handleFilter(value)} />
+                            <Input className='' onChange={(value) => handleFilter(value)} />
                             <InputGroup.Addon>
                                 <SearchIcon />
                             </InputGroup.Addon>
@@ -36,7 +43,7 @@ const ExistingRecipes = () => {
                     </Col>
                 </Row>
             </Grid>
-            <div className='flex flex-wrap'>
+            <div className='flex flex-wrap justify-center'>
                 {filteredCollection?.map(item => <RecipeCard data={item} />)}
             </div>
 
