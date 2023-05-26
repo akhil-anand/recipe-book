@@ -38,7 +38,7 @@ const RecipeCard = ({ data }) => {
     const updateRating = (value) => {
         console.log(value)
         setRecipeData({...recipeData, rating: value })
-        return axios.patch(`http://localhost:5000/api/updateRecipe/${recipeData?._id}`, {...recipeData, rating: value })
+        return axios.patch(`https://drab-cyan-jellyfish-wrap.cyclic.app/api/updateRecipe/${recipeData?._id}`, {...recipeData, rating: value })
             .then(() => getAllExistingRecipes())
             .catch(error => console.log(`Unexpected Error occured: ${error}`))
     }
