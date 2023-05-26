@@ -94,6 +94,7 @@ const AddRecipe = (props) => {
                     <Form>
                         <Form.Group>
                             <Form.Control
+                            className='w-32 sm:w-64'
                                 placeholder="Recipe Name"
                                 value={recipeData?.recipeName ?? ''}
                                 onChange={value => { setRecipeData({ ...recipeData, recipeName: value }) }}
@@ -103,6 +104,7 @@ const AddRecipe = (props) => {
                         <div className='flex'>
                             <Form.Group>
                                 <Form.Control
+                                className='w-32 sm:w-64'
                                     placeholder="Step Name"
                                     value={formData?.stepName ?? ''}
                                     onChange={value => { twoWayBind('stepName', value, setFormData); setValidated(false) }}
@@ -136,6 +138,7 @@ const AddRecipe = (props) => {
                         <div className='flex mt-3'>
                             <Form.Group>
                                 <Form.Control
+                                    className='w-32 sm:w-64'
                                     placeholder="Add Instruction"
                                     value={instructionData ?? ''}
                                     onChange={value => { setInstructionData(value); setValidated(false) }}
@@ -148,7 +151,7 @@ const AddRecipe = (props) => {
                                 />
                             </Form.Group>
                             <div>
-                                <Button role='button' size='md' onClick={addInstruction} >
+                                <Button role='button' size='md' onClick={addInstruction} className='md:text-sm' >
                                     <AddOutlineIcon />&nbsp; { checkNullUndefined(editInstruction) ? 'Add' : 'Update' } Instruction
                                 </Button>
                             </div>
