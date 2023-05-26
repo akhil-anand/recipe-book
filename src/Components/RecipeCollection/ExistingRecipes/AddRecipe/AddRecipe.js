@@ -139,6 +139,11 @@ const AddRecipe = (props) => {
                                     placeholder="Add Instruction"
                                     value={instructionData ?? ''}
                                     onChange={value => { setInstructionData(value); setValidated(false) }}
+                                    onKeyDown={(event) => {
+                                        if(event.key === 'Enter'){
+                                            addInstruction()
+                                        }
+                                    }}
                                     errorMessage={validated && !instructionData?.length ? 'This field is required' : null}
                                 />
                             </Form.Group>
