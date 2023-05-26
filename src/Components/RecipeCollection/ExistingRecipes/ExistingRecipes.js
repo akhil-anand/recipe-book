@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import RecipeCard from './RecipeCard/RecipeCard'
-import { Affix, Button, Col, Grid, Input, InputGroup, Row } from 'rsuite'
+import { Affix, Button, Col, Grid, Input, InputGroup, Loader, Row } from 'rsuite'
 import SearchIcon from '@rsuite/icons/Search';
 import AddRecipe from './AddRecipe/AddRecipe'
 import { getAllExistingRecipes } from '../../../Shared/commonAPICalls'
@@ -11,6 +11,8 @@ const ExistingRecipes = () => {
 
     const { collections } = useSelector((state) => state.CollectionSlice)
     const [filteredCollection, setFilteredCollections] = useState([])
+
+    const [showLoader, setShowLoader] = useState(false)
 
     useEffect(() => {
         console.log(collections)
@@ -31,11 +33,13 @@ const ExistingRecipes = () => {
     }
 
     useEffect(() => {
-        getAllExistingRecipes()
+        setShowLoader(true)
+        getAllExistingRecipes().then(() => setShowLoader(false))
     },[])
 
     return (
         <div className=''>
+            {showLoader ? <Loader className='z-50' backdrop size='lg' content="loading..." vertical /> : null }
             <AddRecipe showModal={showModal} setShowModal={setShowModal} />
             <Affix className='text-end'>
                 <Button className='mx-2' onClick={() => setShowModal(true)} >Add Recipe +</Button>
