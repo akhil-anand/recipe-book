@@ -46,9 +46,9 @@ const ExistingRecipes = () => {
             </Affix>
             <Grid>
                 <Row>
-                    <Col xs={4}></Col>
-                    <Col xs={16}><h5 className='recipe-title font-semi-bold text-2xl'>Existing Recipes</h5></Col>
-                    <Col xs={4} className='flex justify-between'>
+                    <Col xs={8}></Col>
+                    <Col xs={8}><h5 className='recipe-title font-semi-bold text-2xl'>Existing Recipes</h5></Col>
+                    <Col xs={8} className='flex justify-between'>
                         <InputGroup inside>
                             <Input className='' onChange={(value) => handleFilter(value)} />
                             <InputGroup.Addon>
