@@ -1,15 +1,22 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import RecipeCard from './RecipeCard/RecipeCard'
 import { Affix, Button, Col, Grid, Input, InputGroup, Row } from 'rsuite'
 import SearchIcon from '@rsuite/icons/Search';
 import AddRecipe from './AddRecipe/AddRecipe'
+import { getAllExistingRecipes } from '../../../Shared/commonAPICalls'
 
 const ExistingRecipes = () => {
 
     const { collections } = useSelector((state) => state.CollectionSlice)
-    const [filteredCollection, setFilteredCollections] = useState([...collections])
+    const [filteredCollection, setFilteredCollections] = useState([])
+
+    useEffect(() => {
+        console.log(collections)
+        setFilteredCollections(collections)
+    }, [collections])
+    
 
     const navigate = useNavigate()
 
@@ -22,6 +29,10 @@ const ExistingRecipes = () => {
             setFilteredCollections(collections)
         }
     }
+
+    useEffect(() => {
+        getAllExistingRecipes()
+    },[])
 
     return (
         <div className=''>

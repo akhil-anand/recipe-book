@@ -33,7 +33,7 @@ const RecipeCard = ({ data }) => {
                 <Rate defaultValue={data.rating} onChangeActive={setHoverValue} />{' '}
                 <span style={textStyle}>{texts[hoverValue]}</span>
             </>
-            {data?.steps?.filter((filterItem, index) => index < 3)?.map(subItem => <p className='font-sans font-semibold'>{subItem?.mainStep}</p>)}
+            {data?.steps?.filter((filterItem, index) => index < 3)?.map(subItem => <p className='font-sans font-semibold'>{subItem?.stepName}</p>)}
             <Placeholder.Paragraph />
         </Panel>
     )

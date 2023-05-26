@@ -3,9 +3,12 @@ import { Button, Form, Modal, Placeholder, Table } from 'rsuite'
 import AddOutlineIcon from '@rsuite/icons/AddOutline'
 import EditIcon from '@rsuite/icons/Edit';
 import { checkNullUndefined } from '../../../../Shared/commonMethods';
+import axios from 'axios';
+import { getAllExistingRecipes } from '../../../../Shared/commonAPICalls';
 
 const AddRecipe = (props) => {
 
+    const [recipeData, setRecipeData] = useState({})
     const [formData, setFormData] = useState({})
     const [validated, setValidated] = useState(false)
     const [instructionData, setInstructionData] = useState(null)
@@ -16,6 +19,7 @@ const AddRecipe = (props) => {
         props?.setShowModal(false)
         setValidated(false)
         setFormData({})
+        setRecipeData({})
     }
 
     const twoWayBind = (key, value) => {
@@ -40,6 +44,19 @@ const AddRecipe = (props) => {
         setEditMode(null)
     }
 
+    const addStep = () => {
+        const tempData = recipeData?.steps?.length ? [...recipeData?.steps] : []
+        tempData.push(formData)
+        setRecipeData({...recipeData, steps: tempData})
+        setFormData({})
+    }
+
+    const addRecipe = () => {
+        return axios.post('https://drab-cyan-jellyfish-wrap.cyclic.app/api/addRecipe', recipeData)
+            .then((response) => getAllExistingRecipes())
+            .catch((error) => console.log(error))
+    }
+
     return (
         <Modal open={props?.showModal} onClose={handleClose}>
             <Modal.Header>
@@ -47,6 +64,14 @@ const AddRecipe = (props) => {
             </Modal.Header>
             <Modal.Body>
                 <Form>
+                    <Form.Group>
+                        <Form.Control
+                            placeholder="Recipe Name"
+                            value={recipeData?.recipeName ?? ''}
+                            onChange={value => { setRecipeData({...recipeData, recipeName: value}) }}
+                            errorMessage={validated && !recipeData?.recipeName ? 'This field is required' : null}
+                        />
+                    </Form.Group>
                     <Form.Group>
                         <Form.Control
                             placeholder="Add Step"
@@ -83,15 +108,25 @@ const AddRecipe = (props) => {
                         </Form.Group>
                         <AddOutlineIcon className='m-2' onClick={() => instructionData?.length ? twoWayBindInstruction('instructions', instructionData, editMode) : setValidated(true)} />
                         <div>
-                            <Button size="xs">Add Step</Button>
+                            <Button onClick={addStep} size="xs">Add Step</Button>
                         </div>
                     </div>
                 </Form>
+                <div>
+                    {recipeData?.steps?.map(item => {
+                        return(
+                        <div>
+                            <p>{item.stepName}</p>
+                            {item.instructions?.map(instruction => <p>{instruction}</p>)}
+                        </div>
+                        )
+                    })}                
+                </div>
                 <Placeholder.Paragraph />
             </Modal.Body>
             <Modal.Footer>
-                <Button onClick={handleClose} appearance="primary">
-                    Ok
+                <Button onClick={addRecipe} appearance="secondary">
+                    Add Recipe
                 </Button>
                 <Button onClick={handleClose} appearance="subtle">
                     Cancel

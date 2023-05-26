@@ -39,7 +39,7 @@ const RecipePage = () => {
                     {recipeData?.steps?.map((subItem, index) => <>
                         <Timeline.Item dot={<span>{index + 1 >= recipeData?.steps?.length ? '🍱' :'👩‍🍳'}</span>}>
                             <p>Step {index + 1}</p>
-                            <p>{subItem?.mainStep}</p>
+                            <p>{subItem?.stepName}</p>
                         </Timeline.Item>
                         {subItem?.instructions?.map(instruction => <Timeline.Item><p className='text-md'>{instruction}</p></Timeline.Item>)}
 
