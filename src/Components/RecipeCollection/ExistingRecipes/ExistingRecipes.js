@@ -26,7 +26,7 @@ const ExistingRecipes = () => {
 
     const handleFilter = (value) => {
         if (value?.length) {
-            setFilteredCollections(collections?.filter(item => item.recipeName.includes(String(value))))
+            setFilteredCollections(collections?.filter(item => item.recipeName.toLowerCase().includes(value.toLowerCase())))
         } else {
             setFilteredCollections(collections)
         }
